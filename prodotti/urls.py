@@ -7,5 +7,6 @@ urlpatterns = [
     ##CAVALO È PER PROVARE LE COSE
     url(r'^$', lambda r: HttpResponseRedirect('lista/')),
     ##AMMAZZAMI MALE ↑
-    url(r'lista',views.listaprod,name='listaprodotti')
+    url(r'lista',views.listaprod,name='listaprodotti'),
+    url(r'lista\/(?P<idp>.+)/$',views.prodsing,name="prodottosingolo")
 ]
