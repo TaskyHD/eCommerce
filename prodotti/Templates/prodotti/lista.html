@@ -7,9 +7,17 @@
 <body>
     {% load static %}
     <ul>
+    <form method="POST">{% csrf_token %}
         {% for p in prodotti %}
-            <li>{{ p.nome }}</li>
+            <li>
+                <a href="prodotti/lista/{{ p.id }}" >{{ p.nome }}</a>
+                <br>
+                <br>
+                <a href="prodotti/lista/{{ p.id }}"> <img src={% static p.imgUrl %} width="100",heigth="100"></a>
+            </li>
+
         {% endfor %}
+    </form>
     </ul>
 </body>
 </html>

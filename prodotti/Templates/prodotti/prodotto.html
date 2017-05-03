@@ -1,4 +1,16 @@
 <!DOCTYPE html>
+
+.product
+{
+     text-align: justify;
+    width: [width of img];
+}
+.product img
+{
+     display: block;
+    margin: 0 auto;
+}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +20,11 @@
     {% load static %}
     <h1>{{ nome }} - <b>{{ prezzo }}</b></h1>
     <br>
-    <img src="{% static  img  %}" alt="CIBOH" align="left">
-    <div>{{ descr }}</div>
+    <div class="product">
+        <ul>
+            <img src="{% static  img  %}" alt="CIBOH" align="left"/>
+            <p>{{ descr }}</p>
+        </ul>
+    </div>
 </body>
 </html>
