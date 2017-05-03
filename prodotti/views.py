@@ -10,5 +10,6 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 def listaprod(request):
-    context={}
+    prod=Prodotto.objects.get(id=1);
+    context={"nome":prod.nome,"prezzo":prod.prezzo,"img":prod.imgUrl}
     return render(request,"prodotti/lista.html",context)
