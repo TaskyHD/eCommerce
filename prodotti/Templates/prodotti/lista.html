@@ -6,9 +6,10 @@
 </head>
 <body>
     {% load static %}
-    <h1>{{ nome }} - <b>{{ prezzo }}</b></h1>
-    <br>
-    <img src="{% static  img  %}" alt="CIBOH" align="left">
-    <div>{{ descr }}</div>
+    <ul>
+        {% for p in prodotti %}
+            <li>{{ p.nome }}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

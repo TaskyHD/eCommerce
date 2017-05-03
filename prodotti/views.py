@@ -9,11 +9,8 @@ def index(request):
     context = {}
     return HttpResponse(template.render(context, request))
 
-def listaprod(request,idp):
-    if idp:
-        prodsing(request,idp)
-    prod=Prodotto.objects.get(id=1);
-    context={"nome":prod.nome,"prezzo":prod.prezzo,"img":prod.imgUrl}
+def listaprod(request):
+    context={"prodotti": Prodotto.objects.all()}
     return render(request,"prodotti/lista.html",context)
 
 def prodsing(request,idp):
