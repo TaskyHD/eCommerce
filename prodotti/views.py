@@ -1,6 +1,5 @@
-from django.shortcuts import render,reverse
-from django.http import HttpResponse,Http404,HttpResponseRedirect
-from django.template import loader
+from django.shortcuts import *
+from django.http import *
 from .models import Prodotto
 
 # Create your views here.
@@ -11,9 +10,13 @@ def index(request):
 
 def listaprod(request):
     context={"prodotti": Prodotto.objects.all()}
-    return render(request,"prodotti/lista.html",context)
+    if request.method=="POST":
+        prod=request.POST.get("item")
+        return redirect("prodottosingolo",idp=prod)
+    else:
+        return render(request,"prodotti/lista.html",context)
 
 def prodsing(request,idp):
-    prod = Prodotto.objects.get(id=idp);
+    prod = Prodotto.objects.get(id=idp)
     context = {"nome": prod.nome, "prezzo": prod.prezzo, "img": prod.imgUrl,"descr":prod.descr}
     return render(request, "prodotti/prodotto.html", context)
