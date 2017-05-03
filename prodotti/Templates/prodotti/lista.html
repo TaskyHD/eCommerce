@@ -6,8 +6,9 @@
 
 </head>
 <body>
-
+    {% load static %}
+    <img src="{% static "prodotti/saliera.jpg" %}" alt="CIBOH" align="left">
+    <h1>{{ nome }} - <b>{{ prezzo }}</b></h1>
+    <div>{{ descr }}</div>
 </body>
-{% load static %}
-<img src="{% static "prodotti/saliera.jpg" %}" alt="CIBOH">
 </html>
