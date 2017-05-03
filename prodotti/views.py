@@ -13,7 +13,8 @@ def listaprod(request):
     prod=Prodotto.objects.get(id=1);
     context={"nome":prod.nome,"prezzo":prod.prezzo,"img":prod.imgUrl}
     return render(request,"prodotti/lista.html",context)
+
 def prodsing(request,id):
     prod = Prodotto.objects.get(id=1);
     context = {"nome": prod.nome, "prezzo": prod.prezzo, "img": prod.imgUrl,"descr":prod.descr}
-    return render(request, "prodotti/lista.html", context)
+    return render(request, "prodotti/prodotto.html", context)
