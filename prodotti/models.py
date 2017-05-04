@@ -14,6 +14,3 @@ class Prodotto(models.Model):
         return "prodotti/"+self.imgUrl
     def create(img,nnome,descri,nprezzo,nqdisp,ntag=""):
         return Prodotto(imgUrl=img,nome=nnome,descr=descri,prezzo=nprezzo,qdisp=nqdisp,tag=ntag)
-
-    #size ratio min(maxwidth/width, maxheight/height)
-    #size= oldsize*ratio

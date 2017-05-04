@@ -1,0 +1,14 @@
+{% extends "prodotti/base.html" %}
+{% block head %}
+    <title>AGGNHGNHGHG PRODOTTO</title>
+{% endblock %}
+{% block body %}
+    <form method="post"> {% csrf_token %}
+        {% for field in addform %}
+          <p>{{ field.label_tag }}</p><br>
+          {{ field }}
+        {% endfor %}
+    <br>
+    <input type="submit" value="Aggiungi">
+    </form>
+{% endblock %}
