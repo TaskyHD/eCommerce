@@ -18,5 +18,5 @@ def listaprod(request):
 
 def prodsing(request,idp):
     prod = Prodotto.objects.get(id=idp)
-    context = {"nome": prod.nome, "prezzo": prod.prezzo, "img": prod.imgUrl,"descr":prod.descr}
+    context = {"nome": prod.nome, "prezzo": prod.prezzo, "img": prod.imgUrl,"descr":prod.descr,"disp":prod.qdisp}
     return render(request, "prodotti/prodotto.html", context)
