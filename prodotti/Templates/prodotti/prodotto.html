@@ -1,12 +1,9 @@
-<!DOCTYPE html>
+{% extends "prodotti/base.html" %}
+{% block head %}
 {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static "prodotti/prodstyle.css" %}"/>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title> {{ prodtitle }} </title>
-</head>
-<body>
+<title> {{ prodtitle }} </title>
+{% endblock %}
+{% block body %}
     <h1>{{ nome }}</h1>
     <br>
     <figure>
@@ -15,5 +12,5 @@
         <p>Disponibile: {{ disp }}</p>
     </figure>
     <p>{{ descr }}</p>
-</body>
-</html>
+{% endblock %}
+
